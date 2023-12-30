@@ -7,6 +7,7 @@ public class ReverseArray {
         int start = 0;
         int end = arr.length - 1;
 
+        // Two pointer approach
         while(start < end){
             int temp = arr[start];
             arr[start] = arr[end];
