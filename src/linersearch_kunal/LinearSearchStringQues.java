@@ -1,0 +1,42 @@
+package linersearch_kunal;
+
+public class LinearSearchStringQues {
+    static boolean linearsearchString(String str, char target) {
+
+        if(str.length() == 0) { // here length() is used because we use () with string length
+            return false;
+        }
+
+        for (int i = 0; i < str.length(); i++) {
+            if(target == str.charAt(i)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    static boolean linearsearchString2(String str, char target) {
+
+        if(str.length() == 0) { // here length() is used because we use () with string length
+            return false;
+        }
+
+        for(char ch : str.toCharArray()) {
+            if(ch == target) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        String name = "Suryansh";
+        char target = 'y';
+
+        Boolean ans = linearsearchString(name, target);
+        Boolean ans2 = linearsearchString2(name, target);
+
+        System.out.println(ans);
+        System.out.println(ans2);
+    }
+}
