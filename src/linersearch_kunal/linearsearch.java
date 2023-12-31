@@ -10,8 +10,8 @@ public class linearsearch {
         }
 
         // interate through the array
-        for (int element: arr) {
-            if(element == target) {
+        for (int element : arr) {
+            if (element == target) {
                 System.out.println("Element: ");
                 return element;
             }
@@ -61,12 +61,12 @@ public class linearsearch {
 
 
     public static void main(String[] args) {
-//        int[] nums = {1,2,3,4,5,6,7,8,9};
-//        int target = 5;
-//        int ans = linearsearchfunc(nums, target);
+        int[] nums = {1,2,3,4,5,6,7,8,9};
+        int target = 5;
+        int ans = linearsearchfunc(nums, target);
 //        int ans2 = linearsearchfuncElements(nums, target);
 //        Boolean ans3 = linearsearchfuncBoolean (nums, target);
-//        System.out.println(ans);
+        System.out.println(ans);
 //        System.out.println(ans2);
 //        System.out.println(ans3);
 
