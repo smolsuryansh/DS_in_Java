@@ -13,7 +13,6 @@ public class FindMin {
         for (int i = 1; i < arr.length; i++) {
             if(arr[i] < ans){
                 ans = arr[i];
-                System.out.println("Smallest element found at index: " + i);
             }
         }
         return ans;
