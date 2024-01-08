@@ -1,5 +1,8 @@
 package linersearch_kunal;
 
+// Best case for linear search: O(1)
+// Worse case for linear search: O(N)
+
 public class linearsearch {
 
     // Search the target and return element
@@ -50,7 +53,6 @@ public class linearsearch {
         for (int i = 0; i < arr.length; i++) {
             int element = arr[i];
             if(element == target) {
-                System.out.println("Element found at index: " );
                 return true;
             }
         }
