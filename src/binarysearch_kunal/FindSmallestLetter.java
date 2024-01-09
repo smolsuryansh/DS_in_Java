@@ -17,7 +17,7 @@ public class FindSmallestLetter {
                 start = mid + 1;
             }
         }
-        return letters[start % letters.length];
+        return letters[start % letters.length]; // len = 4, start = mid + 1, 3 + 1 = 4, 4 % 4 = 0, 0th index
     }
 
 

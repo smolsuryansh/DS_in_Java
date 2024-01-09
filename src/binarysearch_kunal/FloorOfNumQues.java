@@ -9,30 +9,15 @@ public class FloorOfNumQues {
         // if number is smaller than the first number of the array it will return -1 by default.
 
         while(start <= end) {
-            int mid =  start + (end - start) / 2;
+            // Assign middle element:
+            int mid = start + (end - start) / 2;
 
-            boolean isAsc = arr[start] < arr[end];
-
-            // To check Floor:
-            if(arr[mid] <= target) {
+            if(target > arr[mid]){
+                start = mid + 1;
+            } else if (target < arr[mid]) {
+                end = mid - 1;
+            } else {
                 return mid;
-            }
-
-            if(isAsc){
-                if(target < arr[mid]){
-                    end = mid - 1;
-                }
-                else {
-                    start = mid + 1;
-                }
-            }
-            else {
-                if(target < arr[mid]) {
-                    start = mid + 1;
-                }
-                else {
-                    end = mid - 1;
-                }
             }
         }
         return end;
@@ -40,8 +25,8 @@ public class FloorOfNumQues {
 
 
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5,6,7,9};
-        int target = 8;
+        int[] arr = {2,4,5,7,9};
+        int target = 1;
         int ans = Floor(arr, target);
         System.out.println("Element found at index: " + ans);
     }
