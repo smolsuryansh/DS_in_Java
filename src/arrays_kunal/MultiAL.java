@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class MultiAL {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        ArrayList<ArrayList<Integer>> list = new ArrayList<>();
+        ArrayList<ArrayList<Integer>> list = new ArrayList<>(); // 2D ARRAY
 
         // Initializing array list
         for (int i = 0; i < 3; i++) { // 3 is row
