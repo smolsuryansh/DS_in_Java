@@ -31,10 +31,10 @@ public class FirstLastPos {
             } else {
                 ans = mid;
                 if(findStartIndex){
-                    end = mid - 1;
+                    end = mid - 1; // check first occurance on left side
                 }
                 else {
-                    start = mid + 1;
+                    start = mid + 1; // check last occurance on right side
                 }
             }
         }

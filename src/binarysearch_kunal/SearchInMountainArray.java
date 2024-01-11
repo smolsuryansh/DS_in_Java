@@ -47,14 +47,14 @@ public class SearchInMountainArray {
 
             if(isAsc) {
                 if(arr[mid] > target){
-                    end = end - 1;
+                    end = mid - 1;
                 } else {
                     start = mid + 1;
                 }
             }
             else {
                 if(arr[mid] < target){
-                    end = end - 1;
+                    end = mid - 1;
                 } else {
                     start = mid + 1;
                 }
