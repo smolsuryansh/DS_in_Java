@@ -37,8 +37,9 @@ public class PosOfElementInInfiniteArray {
     }
 
     public static void main(String[] args) {
+        // There will be an error (Out of bounds exception) in this as this is an finite array and not an infinite array.
         int[] arr = {1,2,3,4,5,6,7,8,9,10,11,12,14,15,16,17,18,19,20,21,22,25,26};
-        int target = 15;
+        int target = 25;
         int ans = findRange(arr, target);
         System.out.println(ans);
     }
