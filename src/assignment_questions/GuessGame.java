@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class GuessGame {
     // Leetcode ques: 374, uses binary search
+
     private static int pickedNumber;
 
     // Kinda useless part, can ignore
