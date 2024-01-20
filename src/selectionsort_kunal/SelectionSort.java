@@ -3,7 +3,7 @@ package selectionsort_kunal;
 import java.util.Arrays;
 
 public class SelectionSort {
-    // Time complexity: O(n^2)
+    // Time complexity: Worst case: O(n^2), Best case: O(n^2)
     static void selectionSort(int[] arr){
         for (int i = 0; i < arr.length; i++) {
             // Find the max item in the remaining array and swap with correct index

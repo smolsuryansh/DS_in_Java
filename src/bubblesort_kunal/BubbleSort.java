@@ -3,7 +3,7 @@ package bubblesort_kunal;
 import java.util.Arrays;
 
 public class BubbleSort {
-    // Time complexity: O(n^2)
+    // Time complexity: Worst case: O(n^2), Best case: O(n)
     static void bubbleSort(int[] arr){
         boolean swapped; // to check if the array is already sorted or not
         // Run the steps n-1 times
