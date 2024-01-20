@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 public class BubbleSort {
     // Time complexity: O(n^2)
-
     static void bubbleSort(int[] arr){
         boolean swapped; // to check if the array is already sorted or not
         // Run the steps n-1 times
