@@ -23,7 +23,7 @@ public class FindSmallestLetter {
 
     public static void main(String[] args) {
         char[] letters = {'a', 'c', 'e', 'g'};
-        char target = 'c';
+        char target = 'g';
         char ans = SmallestLetter(letters, target);
         System.out.println(ans);
     }
