@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class RemoveDuplicates {
     // Leetcode 26
 
-    static int removeDuplicate(int[] nums){
+    static void removeDuplicate(int[] nums){
         int i = 0;
         for (int j = 1; j < nums.length; j++) {
             if(nums[i] != nums[j]){
@@ -13,12 +13,12 @@ public class RemoveDuplicates {
                 nums[i] = nums[j];
             }
         }
-        return i+1;
+//        return i+1;
     }
 
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5};
-        int ans = removeDuplicate(arr);
-        System.out.println(ans);
+        int[] arr = {1,2,3,3,4,5};
+        removeDuplicate(arr);
+        System.out.println(Arrays.toString(arr));
     }
 }
