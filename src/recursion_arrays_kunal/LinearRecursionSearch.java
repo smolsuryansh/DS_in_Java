@@ -62,6 +62,24 @@ public class LinearRecursionSearch {
         return linearSearchAllIndexList(arr, target, index + 1, list);
     }
 
+    // Returning the list without passing the LIST argument
+    static ArrayList<Integer> linearSearchAllIndexList2(int[] arr, int target, int index){
+        ArrayList<Integer> list = new ArrayList<>();
+        if (index == arr.length) {
+            return list; // when the end is reached, return the list itself.
+        }
+
+        // this will contain the answer for that particular function call only
+        if (arr[index] == target){
+            list.add(index);
+        }
+        ArrayList<Integer> ansFromBelowCalls = linearSearchAllIndexList2(arr, target, index + 1);
+
+        list.addAll(ansFromBelowCalls);
+
+        return list;
+    }
+
     public static void main(String[] args) {
         int[] arr = {1,2,3,3,4,5,6,7,8,9};
         int target = 3;
