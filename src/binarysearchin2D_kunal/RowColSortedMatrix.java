@@ -31,7 +31,7 @@ public class RowColSortedMatrix {
             return binarySearch(matrix, 0, 0, cols-1, target);
         }
 
-        // Run the loop til 2 loops are remaining
+        // Run the loop til 2 rows are remaining
         int rowStart = 0;
         int rowEnd = rows - 1;
         int colMid = cols/2;
