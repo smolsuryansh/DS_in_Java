@@ -1,5 +1,7 @@
 package backtracking_kunal;
 
+// Recurence relation: T(n) = n * T (n - 1) + O (n^2)
+// Time Complexity: O(n^3 + n!) = O(n!)
 public class NQueens {
     public static void main(String[] args) {
         int n = 4;
@@ -63,7 +65,7 @@ public class NQueens {
                 if (element) {
                     System.out.print("Q ");
                 } else {
-                    System.out.print("X ");
+                    System.out.print(". ");
                 }
             }
             System.out.println();
