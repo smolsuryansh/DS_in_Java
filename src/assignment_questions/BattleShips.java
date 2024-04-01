@@ -1,8 +1,13 @@
 package assignment_questions;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class BattleShips {
     public static void main(String[] args) {
-        char[][] board = {{'X','.','.','X'},{'.','.','.','X'},{'.','.','.','X'}};
+        char[][] board =
+                {{'X','.','.','X'},
+                {'.','.','.','X'},
+                {'.','.','.','X'}};
 
         System.out.println(countBattleships(board));
     }
