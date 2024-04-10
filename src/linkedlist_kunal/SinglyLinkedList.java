@@ -4,7 +4,6 @@ public class SinglyLinkedList {
 
     private Node head;
     private Node tail;
-
     private int size;
 
     public SinglyLinkedList() {
@@ -55,6 +54,22 @@ public class SinglyLinkedList {
         temp.next = node; // now temp.next will be the new created node
     }
 
+    // insert using recursion
+    public void insertRecursion(int val, int index) {
+        head = insertRecursion(val, index, head);
+    }
+
+    private Node insertRecursion(int val, int index, Node node) {
+        if (index == 0) {
+            Node temp = new Node(val, node);
+            size++;
+            return temp;
+        }
+
+        node.next = insertRecursion(val, index-1, node.next); // current node = whatever you have added in base and have returned
+        return node;
+    }
+
     public int delete(int index) {
         if (index == 0) {
             return deleteFirst();
@@ -70,6 +85,21 @@ public class SinglyLinkedList {
         prev.next = prev.next.next;
 
         return val;
+    }
+
+    public void duplicates() {
+        Node node = head; // start checking from head
+
+        while (node.next != null) {
+            if(node.value == node.next.value) {
+                node.next = node.next.next;
+                size--;
+            } else {
+                node = node.next;
+            }
+        }
+        tail = node;
+        tail.next = null;
     }
 
     public Node find (int value) { // get reference pointer of particular nodes
@@ -125,6 +155,35 @@ public class SinglyLinkedList {
         System.out.println("End");
     }
 
+    public static SinglyLinkedList merge (SinglyLinkedList first, SinglyLinkedList second) {
+        Node firstHead = first.head;
+        Node secondHead = second.head;
+
+        SinglyLinkedList ans = new SinglyLinkedList();
+
+        while (firstHead != null && secondHead != null) {
+            if (firstHead.value < secondHead.value) {
+                ans.insertLast(firstHead.value);
+                firstHead = firstHead.next;
+            } else {
+                ans.insertLast(secondHead.value);
+                secondHead = secondHead.next;
+            }
+        }
+
+        while(firstHead != null) {
+            ans.insertLast(firstHead.value);
+            firstHead = firstHead.next;
+        }
+
+        while (secondHead != null) {
+            ans.insertLast(secondHead.value);
+            secondHead = secondHead.next;
+        }
+
+        return ans;
+    }
+
     private class Node {
         private int value;
         private Node next;
@@ -137,5 +196,20 @@ public class SinglyLinkedList {
             this.value = value;
             this.next = next;
         }
+    }
+
+    public static void main(String[] args) {
+        SinglyLinkedList list = new SinglyLinkedList();
+
+        list.insertLast(1);
+        list.insertLast(1);
+        list.insertLast(2);
+        list.insertLast(3);
+        list.insertLast(3);
+        list.insertLast(3);
+        list.display();
+
+        list.duplicates();
+        list.display();
     }
 }

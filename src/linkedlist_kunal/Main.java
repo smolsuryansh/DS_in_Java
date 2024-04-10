@@ -2,7 +2,7 @@ package linkedlist_kunal;
 
 public class Main {
     public static void main(String[] args) {
-        /* // Singly linked list
+        // Singly linked list
         SinglyLinkedList list = new SinglyLinkedList();
         list.insertFirst(3);
         list.insertFirst(2);
@@ -12,18 +12,20 @@ public class Main {
         list.insertLast(99);
         list.display();
 
-        System.out.println(list.deleteFirst());
+//        System.out.println(list.deleteFirst());
+//        list.display();
+//
+//        System.out.println(list.deleteLast());
+//        list.display();
+//
+//        System.out.println(list.delete(2));
+//        list.display();
+
+//        System.out.println(list.find(2));
+//        System.out.println(list.get(1));
+        list.insertRecursion(4, 2);
         list.display();
 
-        System.out.println(list.deleteLast());
-        list.display();
-
-        System.out.println(list.delete(2));
-        list.display();
-
-        System.out.println(list.find(2));
-        System.out.println(list.get(1));
-        */
 
         /*
         DoublyLinkedList list = new DoublyLinkedList();
@@ -37,11 +39,13 @@ public class Main {
         list.display();
         */
 
+        /*
         CircularLinkedList list = new CircularLinkedList();
         list.insert(13);
         list.insert(23);
         list.insert(33);
         list.delete(23);
         list.display();
+        */
     }
 }
