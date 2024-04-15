@@ -1,18 +1,14 @@
 package assignment_questions;
 
-import linkedlist_kunal.SinglyLinkedList;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-
-import java.util.LinkedList;
-
-public class LinkedListCycle {
-    // Leetcode 141
+public class LinkedListCycle2 {
     public static void main(String[] args) {
 
     }
 
-    static boolean hasCycle(ListNode head) {
+    static ListNode detectCycle(ListNode head) {
+        // we need to find the length of cycle
+        int length = 0;
+
         ListNode fast = head;
         ListNode slow = head;
 
@@ -21,14 +17,36 @@ public class LinkedListCycle {
             slow = slow.next;
 
             if(fast == slow) {
-                return true;
+                length = lengthCycle(slow);
+                break;
             }
         }
-        return false;
+
+        // if no cycle, return 0
+        if (length == 0) {
+            return null;
+        }
+
+        // find the starting node
+        ListNode first = head;
+        ListNode second = head;
+
+        // move it ahead by length of the cycle times
+        while (length > 0) {
+            second = second.next;
+            length--;
+        }
+
+        // keep moving both forward, they will meet at cycle start
+        while (first != second) {
+            first = first.next;
+            second = second.next;
+        }
+
+        return first; // or second
     }
 
-    // find length of the cycle
-    static int lengthOfCycle(ListNode head) {
+    static int lengthCycle (ListNode head) {
         ListNode fast = head;
         ListNode slow = head;
 
@@ -36,12 +54,9 @@ public class LinkedListCycle {
             fast = fast.next.next;
             slow = slow.next;
 
-            if(fast == slow) {
-                // calculate the length
+            if (fast == slow) {
                 ListNode temp = slow;
-                // keep moving it
                 int length = 0;
-//                while (temp != slow) // this wont work we want temp to run atleast once, so we use do while
                 do {
                     temp = temp.next;
                     length++;
@@ -66,5 +81,4 @@ public class LinkedListCycle {
             this.next = next;
         }
     }
-
 }
