@@ -184,6 +184,60 @@ public class SinglyLinkedList {
         return ans;
     }
 
+    // Bubble sort
+    public void bubbleSort() {
+        bubbleSort(size - 1, 0);
+    }
+
+    private void bubbleSort(int row, int col) {
+        if (row == 0) {
+            return;
+        }
+
+        if(col < row) {
+            Node first = get(col);
+            Node second = get(col + 1);
+
+            if(first.value > second.value) {
+                //swap
+                if (first == head) { // first case
+                    head = second;
+                    first.next = second.next;
+                    second.next = first;
+                } else if (second == tail) { // second case
+                    Node prev = get(col - 1);
+                    prev.next = second;
+                    tail = first;
+                    first.next = null;
+                    second.next = tail;
+                } else { // third case
+                    Node prev = get(col - 1);
+                    prev.next = second;
+                    first.next = second.next;
+                    second.next = first;
+                }
+            }
+            bubbleSort(row, col + 1);
+        } else {
+            bubbleSort(row - 1, col);
+        }
+    }
+
+    // Reversing a linked list using recursion
+    private void reverse(Node node) {
+        if (node == tail) {
+            head = tail;
+            return;
+        }
+
+        reverse(node.next);
+
+        // coming out of recursion call
+        tail.next = node;
+        tail = node;
+        tail.next = null;
+    }
+
     private class Node {
         private int value;
         private Node next;
