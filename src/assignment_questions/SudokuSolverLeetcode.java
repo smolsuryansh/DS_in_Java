@@ -26,7 +26,7 @@ public class SudokuSolverLeetcode {
                 board[row][col] = '.'; // reset
             }
         }
-
+        
         return false; // no solution found
     }
 
