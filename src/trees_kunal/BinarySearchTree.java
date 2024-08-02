@@ -21,6 +21,10 @@ public class BinarySearchTree {
     public BinarySearchTree() {
     }
 
+    public int height() {
+        return height(root);
+    }
+
     public int height(Node node) {
         if (node == null) {
             return -1;
