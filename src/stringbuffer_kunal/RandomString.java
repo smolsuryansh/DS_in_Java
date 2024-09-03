@@ -1,4 +1,4 @@
-package stringbuffer;
+package stringbuffer_kunal;
 
 import java.util.Random;
 

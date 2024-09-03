@@ -1,4 +1,4 @@
-package stringbuffer;
+package stringbuffer_kunal;
 
 public class LargeStrings {
     public static void main(String[] args) {
