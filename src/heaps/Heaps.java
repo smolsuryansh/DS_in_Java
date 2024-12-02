@@ -78,4 +78,13 @@ public class Heaps<T extends Comparable<T>> {
             downheap(min);
         }
     }
+
+    // heap sort: remove from heap
+    public ArrayList<T> heapSort() throws Exception {
+        ArrayList<T> data = new ArrayList<>();
+        while (!list.isEmpty()) {
+            data.add(this.remove());
+        }
+        return data;
+    }
 }
