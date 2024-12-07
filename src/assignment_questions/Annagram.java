@@ -1,11 +1,12 @@
 package assignment_questions;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Annagram {
 
-    // neetcode 2
+    // neetcode 2, leetcode 242
     public boolean isAnnagram(String s, String t) {
         if (s.length() != t.length()) {
             return false;
@@ -20,5 +21,20 @@ public class Annagram {
         }
 
         return countS.equals(countT);
+    }
+
+    // unoptimized approach
+    public boolean isAnnagram2(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+
+        char[] sortedS = s.toCharArray();
+        char[] sortedT = t.toCharArray();
+
+        Arrays.sort(sortedS);
+        Arrays.sort(sortedT);
+
+        return Arrays.equals(sortedS, sortedT);
     }
 }
