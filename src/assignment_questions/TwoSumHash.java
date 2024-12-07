@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class TwoSumHash {
 
-    // neetcode 3
+    // neetcode 3, leetcode 1
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
 
