@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class ContainsDuplicate {
 
-    // neetcode 1
+    // neetcode 1, leetcode 217
     public boolean containsDuplicate(int[] nums) {
         Map<Integer, Integer> map = new HashMap<>();
 
