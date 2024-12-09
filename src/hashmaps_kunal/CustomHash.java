@@ -1,4 +1,4 @@
-package hashmaps;
+package hashmaps_kunal;
 
 public class CustomHash {
 
