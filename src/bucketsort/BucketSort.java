@@ -29,7 +29,7 @@ public class BucketSort {
     public void bucketSort(int[] arr) {
         int globalMax = maxVal(arr);
         int globalMin = minVal(arr);
-        int noOfBuckets = (int) ((int) arr.length - (Math.ceil((double) arr.length / 2)));
+        int noOfBuckets = (int) (arr.length - (Math.ceil((double) arr.length / 2)));
 
         int range = globalMax - globalMin;
         int bucketRange = (int) Math.ceil((double) range / noOfBuckets);
