@@ -1,7 +1,6 @@
 package assignment_questions;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class ContainsDuplicate {
 
@@ -25,4 +24,41 @@ public class ContainsDuplicate {
 
         return false;
     }
+
+    // optimized (using set)
+    public boolean containsDuplicateUsingSet(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+
+        for (int num : nums) {
+            if (set.contains(num)) {
+                return true;
+            }
+            set.add(num);
+        }
+        return false;
+    }
+
+    // optional
+    public boolean containsDuplicateOptional(int[] nums) {
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == nums[i - 1]) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // brute force
+    public boolean containsDuplicateBrute(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] == nums[j]) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 }
