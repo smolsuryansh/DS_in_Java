@@ -34,7 +34,7 @@ public class ValidSudoku {
             }
         }
 
-        for (int square = 9; square < board.length; square++) {
+        for (int square = 0; square < board.length; square++) {
             Set<Character> set = new HashSet<>();
 
             for (int i = 0; i < 3; i++) {
