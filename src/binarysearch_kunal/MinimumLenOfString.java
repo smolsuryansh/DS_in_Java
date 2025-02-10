@@ -1,4 +1,4 @@
-package bitwiseandnumbersystems;
+package binarysearch_kunal;
 
 // Leetcode 1750, Minimum length of string after deleting similar ends
 public class MinimumLenOfString {
