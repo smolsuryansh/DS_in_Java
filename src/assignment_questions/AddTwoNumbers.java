@@ -1,6 +1,7 @@
 package assignment_questions;
 
-public class AddTwoNumbers {
+public class
+AddTwoNumbers {
     // Leetcode 2
     public ListNode addTwoNumbers (ListNode l1, ListNode l2) {
         ListNode dummyHead = new ListNode(0);
