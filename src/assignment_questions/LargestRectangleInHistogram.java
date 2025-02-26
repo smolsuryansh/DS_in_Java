@@ -3,6 +3,12 @@ package assignment_questions;
 import java.util.Stack;
 
 public class LargestRectangleInHistogram {
+
+    public static void main(String[] args) {
+        int[] heights = {7, 1, 7, 2, 2, 4};
+        System.out.println(largestRectangleAreaBrute(heights));
+    }
+
     // Leetcode 84
     public int largestRectangleArea(int[] heights) {
         Stack<Integer> stack = new Stack<>();
@@ -35,5 +41,29 @@ public class LargestRectangleInHistogram {
         }
 
         return Math.max(max, area);
+    }
+
+    public static int largestRectangleAreaBrute(int[] heights) {
+        int n = heights.length;
+        int maxArea = 0;
+
+        for (int i = 0; i < n; i++) {
+            int height = heights[i];
+
+            int leftMost = i;
+            while(leftMost >= 0 && heights[leftMost] >= height) {
+                leftMost--;
+            }
+
+            int rightMost = i + 1;
+            while(rightMost < n && heights[rightMost] >= height) {
+                rightMost++;
+            }
+
+            leftMost++;
+            rightMost--;
+            maxArea = Math.max(maxArea, height * (rightMost - leftMost + 1));
+        }
+        return maxArea;
     }
 }
